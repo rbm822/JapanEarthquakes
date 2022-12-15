@@ -14,4 +14,11 @@ public class Location {
         this.earthquakes = new ArrayList<>();
     }
 
+    public void addEarthquake(Earthquake earthquake) {
+        this.earthquakes.add(earthquake);
+    }
+
+    public String toString() {
+        return locationName;
+    }
 }

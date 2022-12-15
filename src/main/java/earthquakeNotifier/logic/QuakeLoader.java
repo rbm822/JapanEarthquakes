@@ -6,16 +6,17 @@ import com.google.gson.JsonElement;
 import earthquakeNotifier.domain.Earthquake;
 import earthquakeNotifier.utils.APIConnection;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class QuakeLoader {
     private JsonArray jsonArray;
-    private List<Earthquake> initialEarthquakeList;
+    private Map<Location, List<Earthquake>> earthquakeMap;
 
     public QuakeLoader(APIConnection connection) {
         this.jsonArray = new Gson().fromJson(connection.getHttpResponse().body(), JsonArray.class);
-        this.initialEarthquakeList = new ArrayList<>();
+        this.earthquakeMap = new HashMap<>();
         buildListOfEarthquakes();
     }
 
@@ -27,19 +28,19 @@ public class QuakeLoader {
                 continue;
             }
 
-            String location = getLocation(element);
+            Location location = new Location(getLocation(element));
+//            earthquakeMap.putIfAbsent(location,);
+
             String date = getDate(element);
             double magnitude = Double.parseDouble(getMagnitude(element));
             String seismicActivity = getSeismicActivity(element);
             Earthquake earthquake = new Earthquake(date, magnitude, seismicActivity);
 
-            if (initialEarthquakeList.size() > 0 && isDuplicate(initialEarthquakeList, earthquake)) {
-                continue;
-            }
+//            if (initialEarthquakeList.size() > 0 && isDuplicate(initialEarthquakeList, earthquake)) {
+//                continue;
+//            }
 
-            // TODO for testing!
-            System.out.println(earthquake);
-            initialEarthquakeList.add(earthquake);
+//            initialEarthquakeList.add(earthquake);
         }
     }
 

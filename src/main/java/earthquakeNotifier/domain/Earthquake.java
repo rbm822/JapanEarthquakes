@@ -1,11 +1,12 @@
 package earthquakeNotifier.domain;
 
 public class Earthquake {
-    // TODO Locations have earthquakes, earthquakes don't have locations
-    private String date;
     private String time;
     private String seismicActivity;
+    private String date;
     private double magnitude;
+
+    // TODO Locations have earthquakes, earthquakes don't have locations
 
     /**
      * Incoming format of dates from JSON data is: "2022-11-17T09:33:00+09:00". The substrings in the constructor
