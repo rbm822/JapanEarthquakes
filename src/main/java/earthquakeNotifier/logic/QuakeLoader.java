@@ -7,9 +7,7 @@ import earthquakeNotifier.domain.Earthquake;
 import earthquakeNotifier.utils.APIConnection;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class QuakeLoader {
     private JsonArray jsonArray;
@@ -33,7 +31,7 @@ public class QuakeLoader {
             String date = getDate(element);
             double magnitude = Double.parseDouble(getMagnitude(element));
             String seismicActivity = getSeismicActivity(element);
-            Earthquake earthquake = new Earthquake(date, location, magnitude, seismicActivity);
+            Earthquake earthquake = new Earthquake(date, magnitude, seismicActivity);
 
             if (earthquakes.size() > 0 && isDuplicate(earthquakes, earthquake)) {
                 continue;
@@ -44,31 +42,6 @@ public class QuakeLoader {
     }
 
     // TODO I want to be able to sort the locations by number of earthquakes
-    public String getMostActiveLocation() {
-        Map<String, Integer> earthquakes = new HashMap<>();
-        String mostActiveLocation = "";
-        int highest = 0;
-
-        for (Earthquake earthquake : this.getEarthquakes()) {
-            String currentLocation = earthquake.getLocation();
-
-            if (!earthquakes.containsKey(currentLocation)) {
-                earthquakes.put(currentLocation, 1);
-            } else {
-                int count = earthquakes.get(currentLocation) + 1;
-                earthquakes.put(currentLocation, count);
-
-                // Keeps track of most active locations.
-                // TODO What to do with locations that are tied?
-                if (count > highest) {
-                    highest = count;
-                    mostActiveLocation = currentLocation;
-                }
-            }
-        }
-
-        return mostActiveLocation;
-    }
 
     public List<Earthquake> getEarthquakes() {
         return earthquakes;

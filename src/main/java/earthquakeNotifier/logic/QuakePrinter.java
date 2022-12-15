@@ -5,7 +5,7 @@ import earthquakeNotifier.utils.APIConnection;
 
 import java.io.IOException;
 
-public class QuakePrinter implements Printable {
+public class QuakePrinter {
     private String url;
     private APIConnection apiConnection;
     private QuakeLoader quakeLoader;
@@ -28,6 +28,5 @@ public class QuakePrinter implements Printable {
     }
 
     public void printMostActiveLocation() {
-        System.out.println("The most active location in Japan is: " + quakeLoader.getMostActiveLocation());
     }
 }

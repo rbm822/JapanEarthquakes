@@ -1,10 +1,17 @@
 package earthquakeNotifier.logic;
 
-public class Location {
-    private String location;
+import earthquakeNotifier.domain.Earthquake;
 
-    public Location(String location) {
-        this.location = location;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Location {
+    private String locationName;
+    private List<Earthquake> earthquakes;
+
+    public Location(String locationName) {
+        this.locationName = locationName;
+        this.earthquakes = new ArrayList<>();
     }
 
 }
