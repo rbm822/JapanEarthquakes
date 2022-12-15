@@ -23,12 +23,12 @@ public class UserInterface {
 
         String usersChoice = scanner.next();
         if (usersChoice.equals("1")) {
-            quakePrinter.print();
+//            quakePrinter.print();
         }
 
         // TODO need to fix QuakePrinter
         if (usersChoice.equals("2")) {
-            quakePrinter.printMostActiveLocation();
+//            quakePrinter.printMostActiveLocation();
         }
 
 

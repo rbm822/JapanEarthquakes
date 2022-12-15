@@ -6,6 +6,6 @@ public class Main {
 //        UserInterface ui = new UserInterface(scanner);
 //        ui.start();
         QuakePrinter printer = new QuakePrinter();
-        printer.printMostActiveLocation();
+        printer.testQuakes();
     }
 }

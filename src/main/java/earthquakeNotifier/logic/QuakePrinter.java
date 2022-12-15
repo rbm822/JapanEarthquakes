@@ -1,6 +1,5 @@
 package earthquakeNotifier.logic;
 
-import earthquakeNotifier.domain.Earthquake;
 import earthquakeNotifier.utils.APIConnection;
 
 import java.io.IOException;
@@ -21,12 +20,7 @@ public class QuakePrinter {
         }
     }
 
-    public void print() {
-        for (Earthquake earthquake : quakeLoader.getEarthquakes()) {
-            System.out.println(earthquake);
-        }
-    }
-
-    public void printMostActiveLocation() {
+    public void testQuakes() {
+        quakeLoader.buildListOfEarthquakes();
     }
 }

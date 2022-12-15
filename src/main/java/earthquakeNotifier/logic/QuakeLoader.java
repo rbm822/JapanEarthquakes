@@ -11,15 +11,15 @@ import java.util.List;
 
 public class QuakeLoader {
     private JsonArray jsonArray;
-    private List<Earthquake> earthquakes;
+    private List<Earthquake> initialEarthquakeList;
 
     public QuakeLoader(APIConnection connection) {
         this.jsonArray = new Gson().fromJson(connection.getHttpResponse().body(), JsonArray.class);
-        this.earthquakes = new ArrayList<>();
-        loadEarthquakes();
+        this.initialEarthquakeList = new ArrayList<>();
+        buildListOfEarthquakes();
     }
 
-    private void loadEarthquakes() {
+    protected void buildListOfEarthquakes() {
         for (JsonElement element : jsonArray) {
             // Skips iteration if location or seismic activity is blank.
             if (isFieldNull(element, "en_anm") ||       // Location
@@ -33,19 +33,17 @@ public class QuakeLoader {
             String seismicActivity = getSeismicActivity(element);
             Earthquake earthquake = new Earthquake(date, magnitude, seismicActivity);
 
-            if (earthquakes.size() > 0 && isDuplicate(earthquakes, earthquake)) {
+            if (initialEarthquakeList.size() > 0 && isDuplicate(initialEarthquakeList, earthquake)) {
                 continue;
             }
 
-            earthquakes.add(earthquake);
+            // TODO for testing!
+            System.out.println(earthquake);
+            initialEarthquakeList.add(earthquake);
         }
     }
 
     // TODO I want to be able to sort the locations by number of earthquakes
-
-    public List<Earthquake> getEarthquakes() {
-        return earthquakes;
-    }
 
     private boolean isDuplicate(List<Earthquake> earthquakes, Earthquake earthquake) {
         return earthquakes.get(earthquakes.size() - 1).equals(earthquake);
@@ -77,8 +75,3 @@ public class QuakeLoader {
     }
 }
 
-// Iterate through the JSON data
-// Get the location
-// If it does not already exist, create it and add a new Earthquake
-// If it does exist, add a new Earthquake
-// When checking for the number of earthquakes, simply check for earthquakes.size()
