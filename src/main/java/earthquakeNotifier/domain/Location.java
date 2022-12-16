@@ -1,6 +1,4 @@
-package earthquakeNotifier.logic;
-
-import earthquakeNotifier.domain.Earthquake;
+package earthquakeNotifier.domain;
 
 import java.util.ArrayList;
 import java.util.List;
