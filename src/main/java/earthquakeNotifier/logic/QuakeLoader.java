@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class QuakeLoader {
     private JsonArray jsonArray;
-    private Map<Location, List<Earthquake>> earthquakeMap;
+    private Map<String, Location> earthquakeMap;
 
     public QuakeLoader(APIConnection connection) {
         this.jsonArray = new Gson().fromJson(connection.getHttpResponse().body(), JsonArray.class);
@@ -28,19 +28,20 @@ public class QuakeLoader {
                 continue;
             }
 
-            Location location = new Location(getLocation(element));
-//            earthquakeMap.putIfAbsent(location,);
-
             String date = getDate(element);
             double magnitude = Double.parseDouble(getMagnitude(element));
             String seismicActivity = getSeismicActivity(element);
+            Location location = new Location(getLocation(element));
             Earthquake earthquake = new Earthquake(date, magnitude, seismicActivity);
+            location.addEarthquake(earthquake);
 
-//            if (initialEarthquakeList.size() > 0 && isDuplicate(initialEarthquakeList, earthquake)) {
-//                continue;
-//            }
+            // Each location has a list
+            // Add the earthquake to the location (if not a duplicate)
+            // The K should be String location and V should be the OBJECT Location!
 
-//            initialEarthquakeList.add(earthquake);
+            // If location already exists in Map, only add the earthquake to the list of earthquakes at the location
+
+            earthquakeMap.put(location.getLocationName(), location);
         }
     }
 
