@@ -13,8 +13,6 @@ public class Location {
         this.earthquakes = new ArrayList<>();
     }
 
-    // TODO should the earthquake list be a separate object?
-
     public void addEarthquake(Earthquake earthquake) {
         this.earthquakes.add(earthquake);
     }

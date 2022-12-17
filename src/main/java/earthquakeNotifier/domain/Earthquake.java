@@ -8,8 +8,6 @@ public class Earthquake {
     private String date;
     private double magnitude;
 
-    // TODO Locations have earthquakes, earthquakes don't have locations
-
     /**
      * Incoming format of dates from JSON data is: "2022-11-17T09:33:00+09:00". The substrings in the constructor
      * separate the date and time in a readable format: Date: 2022-11-27 & Time: 09:33.
@@ -43,7 +41,6 @@ public class Earthquake {
                 .append("Time: ").append(getTime()).append("\n")
                 .append("Magnitude: ").append(getMagnitude()).append("\n")
                 .append("Seismic Activity: ").append(getSeismicActivity()).append("\n");
-
         return sb.toString();
     }
 
