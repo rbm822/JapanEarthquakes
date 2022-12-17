@@ -14,6 +14,12 @@ public class EarthquakeContainer {
     // TODO Needs to check for duplicates
 
     public void add(Earthquake earthquake) {
-        earthquakes.add(earthquake);
+        if (!earthquakes.contains(earthquake)) {
+            earthquakes.add(earthquake);
+        }
+    }
+
+    public int size() {
+        return this.earthquakes.size();
     }
 }

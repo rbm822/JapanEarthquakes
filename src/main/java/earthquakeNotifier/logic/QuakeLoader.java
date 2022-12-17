@@ -47,7 +47,6 @@ public class QuakeLoader {
     }
 
     // TODO I want to be able to sort the locations by number of earthquakes
-
     private boolean isDuplicate(List<Earthquake> earthquakes, Earthquake earthquake) {
         return earthquakes.get(earthquakes.size() - 1).equals(earthquake);
     }
