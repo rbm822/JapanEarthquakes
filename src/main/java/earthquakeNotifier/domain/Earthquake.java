@@ -1,5 +1,7 @@
 package earthquakeNotifier.domain;
 
+import java.util.Objects;
+
 public class Earthquake {
     private String time;
     private String seismicActivity;
@@ -43,5 +45,18 @@ public class Earthquake {
                 .append("Seismic Activity: ").append(getSeismicActivity()).append("\n");
 
         return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Earthquake that = (Earthquake) o;
+        return Double.compare(that.magnitude, magnitude) == 0 && Objects.equals(time, that.time) && Objects.equals(seismicActivity, that.seismicActivity) && Objects.equals(date, that.date);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(time, seismicActivity, date, magnitude);
     }
 }

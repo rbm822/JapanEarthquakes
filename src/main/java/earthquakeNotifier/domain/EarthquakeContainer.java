@@ -9,4 +9,11 @@ public class EarthquakeContainer {
     public EarthquakeContainer() {
         this.earthquakes = new ArrayList<>();
     }
+
+    // TODO Needs to add earthquakes
+    // TODO Needs to check for duplicates
+
+    public void add(Earthquake earthquake) {
+        earthquakes.add(earthquake);
+    }
 }
