@@ -1,16 +1,14 @@
 package earthquakeNotifier.domain;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public class Location {
     private String locationName;
-    private List<Earthquake> earthquakes;
+    private EarthquakeContainer earthquakes;
 
     public Location(String locationName) {
         this.locationName = locationName;
-        this.earthquakes = new ArrayList<>();
+        this.earthquakes = new EarthquakeContainer();
     }
 
     public void addEarthquake(Earthquake earthquake) {
