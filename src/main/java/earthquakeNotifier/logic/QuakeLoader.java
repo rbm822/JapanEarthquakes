@@ -41,8 +41,11 @@ public class QuakeLoader {
             // The K should be String location and V should be the OBJECT Location!
 
             // If location already exists in Map, only add the earthquake to the list of earthquakes at the location
-
-            earthquakeMap.put(location.getLocationName(), location);
+            if (earthquakeMap.containsValue(location)) {
+                location.addEarthquake(earthquake);
+            } else {
+                earthquakeMap.put(location.getLocationName(), location);
+            }
         }
     }
 
