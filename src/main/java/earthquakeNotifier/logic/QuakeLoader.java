@@ -8,7 +8,6 @@ import earthquakeNotifier.domain.Location;
 import earthquakeNotifier.utils.APIConnection;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class QuakeLoader {
@@ -42,11 +41,6 @@ public class QuakeLoader {
                 locations.put(getLocation(element), location);
             }
         }
-    }
-
-    // TODO I want to be able to sort the locations by number of earthquakes
-    private boolean isDuplicate(List<Earthquake> earthquakes, Earthquake earthquake) {
-        return earthquakes.get(earthquakes.size() - 1).equals(earthquake);
     }
 
     private boolean isFieldNull(JsonElement element, String field) {
