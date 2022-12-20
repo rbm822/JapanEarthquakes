@@ -13,11 +13,11 @@ import java.util.Map;
 
 public class QuakeLoader {
     private JsonArray jsonArray;
-    private Map<String, Location> earthquakeMap;
+    private Map<String, Location> locations;
 
     public QuakeLoader(APIConnection connection) {
         this.jsonArray = new Gson().fromJson(connection.getHttpResponse().body(), JsonArray.class);
-        this.earthquakeMap = new HashMap<>();
+        this.locations = new HashMap<>();
         buildListOfEarthquakes();
     }
 
@@ -29,17 +29,19 @@ public class QuakeLoader {
                 continue;
             }
 
-            String location = getLocation(element);         // Location from JSON data.
             String date = getDate(element);
             double magnitude = Double.parseDouble(getMagnitude(element));
             String seismicActivity = getSeismicActivity(element);
+            Location location = new Location(getLocation(element));
             Earthquake earthquake = new Earthquake(date, magnitude, seismicActivity);
-            Location loc = new Location(location);
+            if (locations.containsKey(getLocation(element))) {
+                // Find the key and add the earthquake
+                locations.get(getLocation(element)).addEarthquake(earthquake);
+            } else {
+                location.addEarthquake(earthquake);
+                locations.put(getLocation(element), location);
+            }
         }
-    }
-
-    private void addEarthquakeToLocation(Location location, Earthquake earthquake) {
-        location.addEarthquake(earthquake);
     }
 
     // TODO I want to be able to sort the locations by number of earthquakes
