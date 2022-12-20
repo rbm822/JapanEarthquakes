@@ -1,16 +1,16 @@
 package earthquakeNotifier.ui;
 
-import earthquakeNotifier.logic.QuakePrinter;
+import earthquakeNotifier.utils.EarthquakeConnector;
 
 import java.util.Scanner;
 
 public class UserInterface {
     private final Scanner scanner;
-    private final QuakePrinter quakePrinter;
+    private final EarthquakeConnector earthquakeConnector;
 
     public UserInterface(Scanner scanner) {
         this.scanner = scanner;
-        this.quakePrinter = new QuakePrinter();
+        this.earthquakeConnector = new EarthquakeConnector();
     }
 
     public void start() {

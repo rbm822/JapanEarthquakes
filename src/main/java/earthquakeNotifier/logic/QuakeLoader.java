@@ -20,7 +20,7 @@ public class QuakeLoader {
         buildListOfEarthquakes();
     }
 
-    protected void buildListOfEarthquakes() {
+    private void buildListOfEarthquakes() {
         for (JsonElement element : jsonArray) {
             // Skips iteration if location or seismic activity is blank.
             if (isFieldNull(element, "en_anm") ||       // Location
