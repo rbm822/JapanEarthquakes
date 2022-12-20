@@ -28,11 +28,11 @@ public class Location {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Location location = (Location) o;
-        return locationName.equals(location.locationName) && earthquakes.equals(location.earthquakes);
+        return locationName.equals(location.locationName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(locationName, earthquakes);
+        return Objects.hash(locationName);
     }
 }

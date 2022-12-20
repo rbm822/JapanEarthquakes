@@ -29,24 +29,17 @@ public class QuakeLoader {
                 continue;
             }
 
+            String location = getLocation(element);         // Location from JSON data.
             String date = getDate(element);
             double magnitude = Double.parseDouble(getMagnitude(element));
             String seismicActivity = getSeismicActivity(element);
-            Location location = new Location(getLocation(element));
             Earthquake earthquake = new Earthquake(date, magnitude, seismicActivity);
-            location.addEarthquake(earthquake);
-
-            // Each location has a list
-            // Add the earthquake to the location (if not a duplicate)
-            // The K should be String location and V should be the OBJECT Location!
-
-            // If location already exists in Map, only add the earthquake to the list of earthquakes at the location
-            if (earthquakeMap.containsValue(location)) {
-                location.addEarthquake(earthquake);
-            } else {
-                earthquakeMap.put(location.getLocationName(), location);
-            }
+            Location loc = new Location(location);
         }
+    }
+
+    private void addEarthquakeToLocation(Location location, Earthquake earthquake) {
+        location.addEarthquake(earthquake);
     }
 
     // TODO I want to be able to sort the locations by number of earthquakes
