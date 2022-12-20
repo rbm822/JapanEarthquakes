@@ -8,14 +8,14 @@ import java.net.http.HttpResponse;
 
 public class APIConnector {
 
-    private String API_URL;
+//    private String API_URL;
     private HttpClient httpClient;
     private HttpRequest httpRequest;
     private HttpResponse<String> httpResponse;
 
     public APIConnector(String API_URL) throws IOException, InterruptedException {
 
-        this.API_URL = API_URL;
+//        this.API_URL = API_URL;
         this.httpClient = HttpClient.newHttpClient();
         this.httpRequest = HttpRequest.newBuilder()
                 .GET()
