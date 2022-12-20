@@ -1,5 +1,6 @@
 package earthquakeNotifier.domain;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Location {
@@ -12,7 +13,12 @@ public class Location {
     }
 
     public void addEarthquake(Earthquake earthquake) {
+
         this.earthquakes.add(earthquake);
+    }
+
+    public List<Earthquake> getEarthquakes() {
+        return earthquakes.getEarthquakes();
     }
 
     public String getLocationName() {

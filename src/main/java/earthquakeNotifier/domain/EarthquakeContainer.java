@@ -16,6 +16,10 @@ public class EarthquakeContainer {
         }
     }
 
+    public List<Earthquake> getEarthquakes() {
+        return earthquakes;
+    }
+
     public int size() {
         return this.earthquakes.size();
     }
