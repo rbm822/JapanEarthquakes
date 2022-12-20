@@ -6,14 +6,14 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class APIConnection {
+public class APIConnector {
 
     private String API_URL;
     private HttpClient httpClient;
     private HttpRequest httpRequest;
     private HttpResponse<String> httpResponse;
 
-    public APIConnection(String API_URL) throws IOException, InterruptedException {
+    public APIConnector(String API_URL) throws IOException, InterruptedException {
 
         this.API_URL = API_URL;
         this.httpClient = HttpClient.newHttpClient();

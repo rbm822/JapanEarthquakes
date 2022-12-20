@@ -5,7 +5,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import earthquakeNotifier.domain.Earthquake;
 import earthquakeNotifier.domain.Location;
-import earthquakeNotifier.utils.APIConnection;
+import earthquakeNotifier.utils.APIConnector;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,7 +14,7 @@ public class QuakeLoader {
     private JsonArray jsonArray;
     private Map<String, Location> locations;
 
-    public QuakeLoader(APIConnection connection) {
+    public QuakeLoader(APIConnector connection) {
         this.jsonArray = new Gson().fromJson(connection.getHttpResponse().body(), JsonArray.class);
         this.locations = new HashMap<>();
         buildListOfEarthquakes();
@@ -41,6 +41,10 @@ public class QuakeLoader {
                 locations.put(getLocation(element), location);
             }
         }
+    }
+
+    public Map<String, Location> getLocations() {
+        return locations;
     }
 
     private boolean isFieldNull(JsonElement element, String field) {
