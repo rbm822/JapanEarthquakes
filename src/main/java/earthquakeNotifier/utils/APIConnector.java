@@ -24,8 +24,6 @@ public class APIConnector {
         this.httpResponse = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
     }
 
-
-
     public HttpResponse<String> getHttpResponse() {
         return this.httpResponse;
     }

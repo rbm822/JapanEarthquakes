@@ -6,7 +6,7 @@ import java.util.List;
 public class EarthquakeContainer {
     private List<Earthquake> earthquakes;
 
-    public EarthquakeContainer() {
+    EarthquakeContainer() {
         this.earthquakes = new ArrayList<>();
     }
 
