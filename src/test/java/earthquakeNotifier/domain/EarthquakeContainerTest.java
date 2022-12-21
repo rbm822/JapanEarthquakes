@@ -12,6 +12,7 @@ class EarthquakeContainerTest {
     Earthquake earthquake5 = new Earthquake("2022-09-17T11:45:00+09:00", 4.4, "5");
     EarthquakeContainer earthquakeContainer = new EarthquakeContainer();
 
+    // Ensures duplicate Earthquake objects are not added to the List.
     @Test
     void add() {
         earthquakeContainer.add(earthquake1);
@@ -24,7 +25,6 @@ class EarthquakeContainerTest {
         earthquakeContainer.add(earthquake3);
         earthquakeContainer.add(earthquake4);
         earthquakeContainer.add(earthquake5);
-
         assertEquals(4.5, earthquakeContainer.findMaxMagnitude());
     }
 }
