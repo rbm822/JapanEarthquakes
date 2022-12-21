@@ -21,6 +21,10 @@ public class Location {
         return earthquakes.getEarthquakes();
     }
 
+    public int getNumOfEarthquakes() {
+        return earthquakes.size();
+    }
+
     public String getLocationName() {
         return locationName;
     }

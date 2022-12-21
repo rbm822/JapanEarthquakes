@@ -26,7 +26,7 @@ public class Earthquake {
 
     private String getTime(){return time;}
 
-    private double getMagnitude() {
+    public double getMagnitude() {
         return magnitude;
     }
 

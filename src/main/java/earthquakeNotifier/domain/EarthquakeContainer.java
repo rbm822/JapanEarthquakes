@@ -20,6 +20,17 @@ public class EarthquakeContainer {
         return earthquakes;
     }
 
+    public double getMaxMagnitude() {
+        double max = 0.0;
+        for (Earthquake earthquake : earthquakes) {
+            if (earthquake.getMagnitude() > max) {
+                max = earthquake.getMagnitude();
+            }
+        }
+
+        return max;
+    }
+
     public int size() {
         return this.earthquakes.size();
     }
