@@ -29,7 +29,7 @@ public class Location {
         return locationName;
     }
 
-    public double getMaxMagnitudeOfLocation() {
+    public Earthquake getEarthquakeWithMaxMagnitude() {
         return earthquakes.findMaxMagnitude();
     }
 
