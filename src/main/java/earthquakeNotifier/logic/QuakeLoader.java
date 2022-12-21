@@ -43,7 +43,7 @@ public class QuakeLoader {
         }
     }
 
-    public Map<String, Location> getLocations() {
+    public Map<String, Location> getLocationsWithEarthquakes() {
         return locations;
     }
 

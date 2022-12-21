@@ -12,7 +12,7 @@ public class Main {
         try {
             APIConnector connector = new APIConnector("https://www.jma.go.jp/bosai/quake/data/list.json");
             QuakeLoader quakeLoader = new QuakeLoader(connector);
-            for (Location location : quakeLoader.getLocations().values()) {
+            for (Location location : quakeLoader.getLocationsWithEarthquakes().values()) {
                 System.out.println("There have been " + location.getNumOfEarthquakes() +
                         " earthquakes at " + location + ".");
             }
