@@ -22,16 +22,16 @@ public class EarthquakeContainer {
 
     // TODO What to do with multiple "max" earthquakes?
     public Earthquake findMaxMagnitude() {
-        Earthquake earthquakeWithMax = null;
+        Earthquake earthquakeWithMaxMagnitude = null;
         double max = 0.0;
         for (Earthquake earthquake : earthquakes) {
             if (earthquake.getMagnitude() > max) {
                 max = earthquake.getMagnitude();
-                earthquakeWithMax = earthquake;
+                earthquakeWithMaxMagnitude = earthquake;
             }
         }
 
-        return earthquakeWithMax;
+        return earthquakeWithMaxMagnitude;
     }
 
     public int size() {

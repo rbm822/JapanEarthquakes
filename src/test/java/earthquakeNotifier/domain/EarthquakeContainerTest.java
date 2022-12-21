@@ -1,5 +1,6 @@
 package earthquakeNotifier.domain;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -12,19 +13,23 @@ class EarthquakeContainerTest {
     Earthquake earthquake5 = new Earthquake("2022-09-17T11:45:00+09:00", 4.4, "5");
     EarthquakeContainer earthquakeContainer = new EarthquakeContainer();
 
+    @BeforeEach
+    void setUp() {
+        earthquakeContainer.add(earthquake1);
+        earthquakeContainer.add(earthquake2);
+        earthquakeContainer.add(earthquake3);
+        earthquakeContainer.add(earthquake4);
+        earthquakeContainer.add(earthquake5);
+    }
+
     // Ensures duplicate Earthquake objects are not added to the List.
     @Test
     void add() {
-        earthquakeContainer.add(earthquake1);
-        earthquakeContainer.add(earthquake2);
-        assertEquals(1, earthquakeContainer.size());
+        assertEquals(4, earthquakeContainer.size());
     }
 
     @Test
     void findMaxMagnitude() {
-        earthquakeContainer.add(earthquake3);
-        earthquakeContainer.add(earthquake4);
-        earthquakeContainer.add(earthquake5);
-        assertEquals(4.5, earthquakeContainer.findMaxMagnitude());
+        assertEquals(earthquake3, earthquakeContainer.findMaxMagnitude());
     }
 }
