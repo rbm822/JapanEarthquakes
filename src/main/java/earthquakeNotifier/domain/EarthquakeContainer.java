@@ -20,6 +20,7 @@ public class EarthquakeContainer {
         return earthquakes;
     }
 
+    // TODO What to do with multiple "max" earthquakes?
     public double findMaxMagnitude() {
         double max = 0.0;
         for (Earthquake earthquake : earthquakes) {
