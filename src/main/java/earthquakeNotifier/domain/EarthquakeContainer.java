@@ -20,7 +20,7 @@ public class EarthquakeContainer {
         return earthquakes;
     }
 
-    public double getMaxMagnitude() {
+    public double findMaxMagnitude() {
         double max = 0.0;
         for (Earthquake earthquake : earthquakes) {
             if (earthquake.getMagnitude() > max) {
