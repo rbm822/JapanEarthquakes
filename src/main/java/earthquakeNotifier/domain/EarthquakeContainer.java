@@ -6,7 +6,7 @@ import java.util.List;
 public class EarthquakeContainer {
     private List<Earthquake> earthquakes;
 
-    EarthquakeContainer() {
+    public EarthquakeContainer() {
         this.earthquakes = new ArrayList<>();
     }
 
@@ -14,10 +14,6 @@ public class EarthquakeContainer {
         if (!earthquakes.contains(earthquake)) {
             earthquakes.add(earthquake);
         }
-    }
-
-    public List<Earthquake> getEarthquakes() {
-        return earthquakes;
     }
 
     // TODO What to do with multiple "max" earthquakes?
@@ -32,6 +28,10 @@ public class EarthquakeContainer {
         }
 
         return earthquakeWithMaxMagnitude;
+    }
+
+    public List<Earthquake> getEarthquakes() {
+        return earthquakes;
     }
 
     public int size() {
