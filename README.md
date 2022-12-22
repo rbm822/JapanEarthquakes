@@ -23,3 +23,6 @@ I am accessing earthquake data from Japan's Meteorological Agency; there is no A
 - One of my original goals is to have the program e-mail me when a new earthquake is detected. Not as a safety service but just because I think that would be fun to do, especially because I live in Japan!
 
 - Insert the data into a database for historical purposes.
+
+## Feedback
+I am always open to constructive criticism and would appreciate feedback on this project if you're willing to share it.
