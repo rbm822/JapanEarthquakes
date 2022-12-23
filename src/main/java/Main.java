@@ -13,7 +13,8 @@ public class Main {
             APIConnector connector = new APIConnector("https://www.jma.go.jp/bosai/quake/data/list.json");
             QuakeLoader quakeLoader = new QuakeLoader(connector);
             for (Location location : quakeLoader.getLocationsWithEarthquakes().values()) {
-                System.out.println(location.getEarthquakeWithMaxMagnitude());
+                System.out.println(location);
+                System.out.println(location.getEarthquakeWithMaxSeismicActivity());
 //                System.out.println("There have been " + location.getNumOfEarthquakes() +
 //                        " earthquakes at " + location + ".");
             }

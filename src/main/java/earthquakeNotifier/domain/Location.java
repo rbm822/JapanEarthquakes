@@ -33,6 +33,10 @@ public class Location {
         return earthquakes.findMaxMagnitude();
     }
 
+    public Earthquake getEarthquakeWithMaxSeismicActivity() {
+        return earthquakes.findMaxSeismicActivity();
+    }
+
     public String toString() {
         return locationName;
     }
