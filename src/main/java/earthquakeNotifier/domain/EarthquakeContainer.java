@@ -30,6 +30,25 @@ public class EarthquakeContainer {
         return earthquakeWithMaxMagnitude;
     }
 
+    public Earthquake findMaxSeismicActivity() {
+        Earthquake earthquakeWithMaxSeismicActivity = null;
+        double max = 0.0;
+        for (Earthquake earthquake : earthquakes) {
+            String strSeismicActivity = earthquake.getSeismicActivity();
+            // Checks for occasional trailing "+".
+            if (strSeismicActivity.contains("+")) {
+                strSeismicActivity = strSeismicActivity.replace("+", ""); // Removes "+" if it exists.
+            }
+            double dblSeismicActivity = Double.parseDouble(String.valueOf(strSeismicActivity));
+            if (dblSeismicActivity > max) {
+                max = dblSeismicActivity;
+                earthquakeWithMaxSeismicActivity = earthquake;
+            }
+        }
+
+        return earthquakeWithMaxSeismicActivity;
+    }
+
     public List<Earthquake> getEarthquakes() {
         return earthquakes;
     }
