@@ -1,30 +1,32 @@
 package earthquakeNotifier.domain;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class Earthquake {
-    private String time;
+    private DateTimeFormatter formatter;
+    private LocalDateTime dateTime;
     private String seismicActivity;
-    private String date;
     private double magnitude;
 
     /**
-     * Incoming format of dates from JSON data is: "2022-11-17T09:33:00+09:00". The substrings in the constructor
-     * separate the date and time in a readable format: Date: 2022-11-27 & Time: 09:33.
      * Seismic activity is a String because sometimes there is a trailing "+".
      */
     public Earthquake(String date, double magnitude, String seismicActivity) {
-        this.date = date.substring(0, 10);
-        this.time = date.substring(11, 16);
+        this.formatter = DateTimeFormatter.ISO_DATE_TIME;
+        this.dateTime = LocalDateTime.parse(date, formatter);
         this.magnitude = magnitude;
         this.seismicActivity = seismicActivity;
     }
 
-    private String getDate() {
-        return date;
+    private LocalDate getDate() {
+        return dateTime;
     }
 
-    private String getTime(){return time;}
+    private LocalTime getTime() { return dateTime; }
 
     public double getMagnitude() {
         return magnitude;
