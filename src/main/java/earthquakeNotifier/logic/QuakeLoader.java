@@ -52,8 +52,8 @@ public class QuakeLoader {
         return locations;
     }
 
-    public List<Earthquake> getEarthquakeSublist(int fromIndex, int toIndex) {
-        return earthquakeContainer.sublist(fromIndex, toIndex);
+    public List<Earthquake> getEarthquakeList() {
+        return earthquakeContainer.getEarthquakes();
     }
 
     private boolean isFieldNull(JsonElement element, String field) {
