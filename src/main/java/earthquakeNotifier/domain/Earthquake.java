@@ -28,6 +28,15 @@ public class Earthquake {
         this.seismicActivity = seismicActivity;
     }
 
+    public Earthquake(String date, double magnitude, String seismicActivity) {
+        this.formatter = DateTimeFormatter.ISO_DATE_TIME;
+        this.dateTime = LocalDateTime.parse(date, formatter);
+        this.date = LocalDate.parse(date, formatter);
+        this.time = LocalTime.parse(date, formatter);
+        this.magnitude = magnitude;
+        this.seismicActivity = seismicActivity;
+    }
+
     private LocalDate getDate() {
         return date;
     }

@@ -35,7 +35,7 @@ public class QuakeLoader {
             double magnitude = Double.parseDouble(getMagnitude(element));
             String seismicActivity = getSeismicActivity(element);
             Location location = new Location(getLocation(element));
-            Earthquake earthquake = new Earthquake(date, magnitude, seismicActivity);
+            Earthquake earthquake = new Earthquake(location, date, magnitude, seismicActivity);
             earthquakeContainer.add(earthquake);
             if (locations.containsKey(getLocation(element))) {
                 // Find the key and add the earthquake
