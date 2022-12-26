@@ -17,6 +17,14 @@ public class Location {
         this.earthquakes.add(earthquake);
     }
 
+    public Earthquake getEarthquakeWithMaxSeismicActivity() {
+        return earthquakes.findMaxSeismicActivity();
+    }
+
+    public Earthquake getEarthquakeWithMaxMagnitude() {
+        return earthquakes.findMaxMagnitude();
+    }
+
     public List<Earthquake> getEarthquakes() {
         return earthquakes.getEarthquakes();
     }

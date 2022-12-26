@@ -14,7 +14,7 @@ public class Main {
             QuakeLoader quakeLoader = new QuakeLoader(connector);
             for (Location location : quakeLoader.getLocationsWithEarthquakes().values()) {
                 System.out.println(location);
-//                System.out.println(location.getEarthquakeWithMaxSeismicActivity());
+                System.out.println(location.getEarthquakeWithMaxSeismicActivity());
 //                System.out.println("There have been " + location.getNumOfEarthquakes() +
 //                        " earthquakes at " + location + ".");
             }
