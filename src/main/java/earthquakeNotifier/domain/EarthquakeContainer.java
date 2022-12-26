@@ -24,6 +24,7 @@ public class EarthquakeContainer {
         return this.earthquakes.size();
     }
 
+    // TODO What to do with multiple "max" earthquakes?
     public Earthquake findMaxMagnitude() {
         Earthquake earthquakeWithMaxMagnitude = null;
         double max = 0.0;
@@ -37,6 +38,7 @@ public class EarthquakeContainer {
         return earthquakeWithMaxMagnitude;
     }
 
+    // TODO What to do with multiple "max" earthquakes?
     public Earthquake findMaxSeismicActivity() {
         Earthquake earthquakeWithMaxSeismicActivity = null;
         double max = 0.0;

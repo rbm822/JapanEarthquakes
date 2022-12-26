@@ -36,6 +36,14 @@ public class Earthquake {
         return dateTime;
     }
 
+    public boolean isBefore(Earthquake earthquake) {
+        return this.getDateTime().isBefore(earthquake.getDateTime());
+    }
+
+    public boolean isAfter(Earthquake earthquake) {
+        return this.getDateTime().isAfter(earthquake.getDateTime());
+    }
+
     public double getMagnitude() {
         return magnitude;
     }
