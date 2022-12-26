@@ -9,6 +9,7 @@ import earthquakeNotifier.domain.Location;
 import earthquakeNotifier.utils.APIConnector;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class QuakeLoader {
@@ -51,8 +52,8 @@ public class QuakeLoader {
         return locations;
     }
 
-    public EarthquakeContainer getEarthquakes() {
-        return earthquakeContainer;
+    public List<Earthquake> getEarthquakeSublist(int fromIndex, int toIndex) {
+        return earthquakeContainer.sublist(fromIndex, toIndex);
     }
 
     private boolean isFieldNull(JsonElement element, String field) {

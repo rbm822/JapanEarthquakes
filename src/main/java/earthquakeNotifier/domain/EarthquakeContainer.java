@@ -32,6 +32,10 @@ public class EarthquakeContainer {
         return this.earthquakes.size();
     }
 
+    public List<Earthquake> sublist(int fromIndex, int toIndex) {
+        return this.earthquakes.subList(fromIndex, toIndex);
+    }
+
     // TODO What to do with multiple "max" earthquakes?
     public Earthquake findMaxMagnitude() {
         Earthquake earthquakeWithMaxMagnitude = null;

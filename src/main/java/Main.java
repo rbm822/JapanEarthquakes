@@ -12,13 +12,18 @@ public class Main {
         try {
             APIConnector connector = new APIConnector("https://www.jma.go.jp/bosai/quake/data/list.json");
             QuakeLoader quakeLoader = new QuakeLoader(connector);
+//            for (Earthquake earthquake : quakeLoader.getEarthquakeSublist(0, 10)) {
+//                System.out.println(earthquake);
+//            }
+
+
 //            for (Earthquake earthquake : quakeLoader.getEarthquakes().getEarthquakes()) {
 //                System.out.println(earthquake);
 //            }
             for (Location location : quakeLoader.getLocationsWithEarthquakes().values()) {
-                System.out.println(location.getEarthquakeWithMaxSeismicActivity());
-//                System.out.println("There have been " + location.getNumOfEarthquakes() +
-//                        " earthquakes at " + location + ".");
+//                System.out.println(location.getEarthquakeWithMaxSeismicActivity());
+                System.out.println("There have been " + location.getNumOfEarthquakes() +
+                        " earthquakes at " + location + ".");
             }
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
