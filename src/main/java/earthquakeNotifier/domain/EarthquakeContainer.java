@@ -20,6 +20,14 @@ public class EarthquakeContainer {
         return earthquakes;
     }
 
+    public Earthquake get(int num) {
+        return earthquakes.get(num);
+    }
+
+    public void set(int index, Earthquake earthquake) {
+        this.earthquakes.set(index, earthquake);
+    }
+
     public int size() {
         return this.earthquakes.size();
     }

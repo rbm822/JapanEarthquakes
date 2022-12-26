@@ -17,10 +17,10 @@ public class QuakeLoader {
     public QuakeLoader(APIConnector connection) {
         this.jsonArray = new Gson().fromJson(connection.getHttpResponse().body(), JsonArray.class);
         this.locations = new HashMap<>();
-        buildListOfEarthquakes();
+        buildLocationsWithEarthquakes();
     }
 
-    private void buildListOfEarthquakes()  {
+    private void buildLocationsWithEarthquakes()  {
         for (JsonElement element : jsonArray) {
             // Skips iteration if location or seismic activity is blank.
             if (isFieldNull(element, "en_anm") ||       // Location

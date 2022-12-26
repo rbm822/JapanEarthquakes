@@ -10,11 +10,15 @@ public class EarthquakeSorter {
         this.earthquakes = new EarthquakeContainer();
     }
 
-
-    public EarthquakeContainer getRecentEarthquakes(int num) {
-        for(Earthquake earthquake : earthquakes.getEarthquakes()) {
+    public void sortEarthquakesByDate(EarthquakeContainer earthquakes) {
+        boolean isSorted = false;
+        for (int i = 0; i < earthquakes.size() - 1; i++) {
+            Earthquake tempQuake = earthquakes.get(i);
+            if (earthquakes.get(i).isBefore(earthquakes.get(i + 1))) {
+                tempQuake = earthquakes.get(i);
+                earthquakes.set(i, earthquakes.get(i + 1));
+                earthquakes.set(i + 1, tempQuake);
+            }
         }
-
-        return earthquakes;
     }
 }
