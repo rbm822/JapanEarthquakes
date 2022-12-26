@@ -29,14 +29,6 @@ public class Location {
         return locationName;
     }
 
-    public Earthquake getEarthquakeWithMaxMagnitude() {
-        return earthquakes.findMaxMagnitude();
-    }
-
-    public Earthquake getEarthquakeWithMaxSeismicActivity() {
-        return earthquakes.findMaxSeismicActivity();
-    }
-
     public String toString() {
         return locationName;
     }

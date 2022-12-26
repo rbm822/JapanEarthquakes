@@ -1,11 +1,13 @@
-package earthquakeNotifier.domain;
+package earthquakeNotifier.logic;
 
+import earthquakeNotifier.domain.Earthquake;
+import earthquakeNotifier.domain.EarthquakeContainer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
-class EarthquakeContainerTest {
+class EarthquakeLocatorTest {
     Earthquake earthquake1 = new Earthquake("2022-11-17T09:33:00+09:00", 1.2, "4");
     Earthquake earthquake2 = new Earthquake("2022-11-17T09:33:00+09:00", 1.2, "4");
     Earthquake earthquake3 = new Earthquake("2022-10-17T09:33:00+09:00", 4.5, "2");
@@ -13,7 +15,7 @@ class EarthquakeContainerTest {
     Earthquake earthquake5 = new Earthquake("2022-09-17T11:45:00+09:00", 2.4, "5");
     Earthquake earthquake6 = new Earthquake("2022-01-27T11:45:00+09:00", 4.4, "5+");
     EarthquakeContainer earthquakeContainer = new EarthquakeContainer();
-
+    EarthquakeLocator earthquakeLocator = new EarthquakeLocator(earthquakeContainer);
 
     @BeforeEach
     void setUp() {
@@ -25,9 +27,13 @@ class EarthquakeContainerTest {
         earthquakeContainer.add(earthquake6);
     }
 
-    // Ensures duplicate Earthquake objects are not added to the List.
     @Test
-    void add() {
-        assertEquals(5, earthquakeContainer.size());
+    void findMaxMagnitude() {
+        assertEquals(earthquake3, earthquakeLocator.findMaxMagnitude());
+    }
+
+    @Test
+    void findMaxSeismicActivity() {
+        assertEquals(earthquake6, earthquakeLocator.findMaxSeismicActivity());
     }
 }

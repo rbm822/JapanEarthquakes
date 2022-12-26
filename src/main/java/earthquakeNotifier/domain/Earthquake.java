@@ -32,6 +32,10 @@ public class Earthquake {
 
     private LocalTime getTime() { return time; }
 
+    public LocalDateTime getDateTime() {
+        return dateTime;
+    }
+
     public double getMagnitude() {
         return magnitude;
     }
