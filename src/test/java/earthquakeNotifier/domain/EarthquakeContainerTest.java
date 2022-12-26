@@ -30,4 +30,14 @@ class EarthquakeContainerTest {
     void add() {
         assertEquals(5, earthquakeContainer.size());
     }
+
+    @Test
+    void findMaxMagnitude() {
+        assertEquals(earthquake3, earthquakeContainer.findMaxMagnitude());
+    }
+
+    @Test
+    void findMaxSeismicActivity() {
+        assertEquals(earthquake6, earthquakeContainer.findMaxSeismicActivity());
+    }
 }
