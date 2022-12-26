@@ -1,4 +1,4 @@
-import earthquakeNotifier.domain.Earthquake;
+import earthquakeNotifier.domain.Location;
 import earthquakeNotifier.logic.QuakeLoader;
 import earthquakeNotifier.utils.APIConnector;
 
@@ -12,16 +12,14 @@ public class Main {
         try {
             APIConnector connector = new APIConnector("https://www.jma.go.jp/bosai/quake/data/list.json");
             QuakeLoader quakeLoader = new QuakeLoader(connector);
-            for (Earthquake earthquake : quakeLoader.getEarthquakes().getEarthquakes()) {
-                System.out.print(earthquake.getLocation());
-                System.out.println(earthquake);
-            }
-//            for (Location location : quakeLoader.getLocationsWithEarthquakes().values()) {
-//                System.out.println(location);
-//                System.out.println(location.getEarthquakeWithMaxSeismicActivity());
+//            for (Earthquake earthquake : quakeLoader.getEarthquakes().getEarthquakes()) {
+//                System.out.println(earthquake);
+//            }
+            for (Location location : quakeLoader.getLocationsWithEarthquakes().values()) {
+                System.out.println(location.getEarthquakeWithMaxSeismicActivity());
 //                System.out.println("There have been " + location.getNumOfEarthquakes() +
 //                        " earthquakes at " + location + ".");
-//            }
+            }
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
