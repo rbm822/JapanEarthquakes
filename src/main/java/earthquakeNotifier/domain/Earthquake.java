@@ -32,7 +32,7 @@ public class Earthquake {
 
     private LocalTime getTime() { return time; }
 
-    public LocalDateTime getDateTime() {
+    private LocalDateTime getDateTime() {
         return dateTime;
     }
 
