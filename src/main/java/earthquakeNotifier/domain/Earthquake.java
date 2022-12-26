@@ -9,6 +9,8 @@ import java.util.Objects;
 public class Earthquake {
     private DateTimeFormatter formatter;
     private LocalDateTime dateTime;
+    private LocalDate date;
+    private LocalTime time;
     private String seismicActivity;
     private double magnitude;
 
@@ -18,15 +20,17 @@ public class Earthquake {
     public Earthquake(String date, double magnitude, String seismicActivity) {
         this.formatter = DateTimeFormatter.ISO_DATE_TIME;
         this.dateTime = LocalDateTime.parse(date, formatter);
+        this.date = LocalDate.parse(date, formatter);
+        this.time = LocalTime.parse(date, formatter);
         this.magnitude = magnitude;
         this.seismicActivity = seismicActivity;
     }
 
     private LocalDate getDate() {
-        return dateTime;
+        return date;
     }
 
-    private LocalTime getTime() { return dateTime; }
+    private LocalTime getTime() { return time; }
 
     public double getMagnitude() {
         return magnitude;
