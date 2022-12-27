@@ -1,4 +1,7 @@
 # Todo list
-## Searching
-- Search by specific location
-- Sort locations by number of earthquakes
+## Searching by:
+- specific location.
+- date.
+- seismic activity / magnitude. 
+- locations by number of earthquakes.
+- average seismic activity/magnitude.

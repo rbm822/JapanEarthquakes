@@ -41,7 +41,9 @@ public class Earthquake {
         return date;
     }
 
-    private LocalTime getTime() { return time; }
+    private LocalTime getTime() {
+        return time;
+    }
 
     private LocalDateTime getDateTime() {
         return dateTime;
@@ -53,7 +55,6 @@ public class Earthquake {
 
     public boolean isAfter(Earthquake earthquake) {
         return this.getDateTime().isAfter(earthquake.getDateTime());
-
     }
 
     public String getLocation() {
