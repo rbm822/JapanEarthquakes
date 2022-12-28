@@ -5,3 +5,5 @@
 - seismic activity / magnitude. 
 - locations by number of earthquakes.
 - average seismic activity/magnitude.
+## Properties:
+- Add latitude and longitude to locations.
