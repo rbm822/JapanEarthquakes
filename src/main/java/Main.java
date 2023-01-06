@@ -1,7 +1,3 @@
-import earthquakeNotifier.logic.EarthquakeFinder;
-import earthquakeNotifier.logic.QuakeLoader;
-import earthquakeNotifier.utils.APIConnector;
-
 import java.io.IOException;
 
 public class Main {

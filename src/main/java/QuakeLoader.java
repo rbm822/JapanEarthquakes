@@ -1,10 +1,6 @@
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
-import earthquakeNotifier.domain.Earthquake;
-import earthquakeNotifier.domain.EarthquakeContainer;
-import earthquakeNotifier.domain.Location;
-import earthquakeNotifier.utils.APIConnector;
 
 import java.util.HashMap;
 import java.util.List;

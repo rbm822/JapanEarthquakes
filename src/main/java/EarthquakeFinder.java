@@ -1,6 +1,3 @@
-import earthquakeNotifier.domain.Earthquake;
-import earthquakeNotifier.domain.Location;
-
 import java.util.List;
 import java.util.Map;
 
