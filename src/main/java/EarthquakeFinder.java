@@ -1,5 +1,3 @@
-package earthquakeNotifier.logic;
-
 import earthquakeNotifier.domain.Earthquake;
 import earthquakeNotifier.domain.Location;
 

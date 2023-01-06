@@ -1,5 +1,3 @@
-package earthquakeNotifier.ui;
-
 import java.util.Scanner;
 
 public class UserInterface {

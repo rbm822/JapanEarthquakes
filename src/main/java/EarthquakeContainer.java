@@ -1,5 +1,3 @@
-package earthquakeNotifier.domain;
-
 import java.util.ArrayList;
 import java.util.List;
 

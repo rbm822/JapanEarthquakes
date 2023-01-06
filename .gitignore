@@ -36,3 +36,9 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+# Compiled class file
+*.class
+
+# Package Files #
+*.jar
