@@ -1,14 +1,36 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.IOException;
+import java.net.URL;
 
 public class Sandbox {
     public static void main(String[] args) {
-        String input3 = "2022-11-10T09:30:00+09:00";
-        String input4 = "2022-11-16T09:33:00+09:00";
-        DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
-        LocalDateTime dateTime0 = LocalDateTime.parse(input3, formatter);
-        LocalDateTime dateTime1 = LocalDateTime.parse(input4, formatter);
-        System.out.println(dateTime0.compareTo(dateTime1));
-//        System.out.println(date0.isBefore(date1));
+	    try {
+	    	APIConnector connector =
+		       	new APIConnector("https://www.jma.go.jp/bosai/quake/data/list.json");
+		System.out.println(connector.getHttpResponse().body());
+	    } catch (IOException e) {
+		    System.out.println("Could not load URL.");
+	    } catch (InterruptedException e) {
+		    System.out.println("Something bad happened.");
+	    }
+
+    }
+
+    public static String stream(URL url) throws IOException {
+	    try (InputStream input = url.openStream()) {
+		    InputStreamReader isr = new InputStreamReader(input);
+		    BufferedReader reader = new BufferedReader(isr);
+		    StringBuilder json = new StringBuilder();
+		    int c;
+		    while ((c = reader.read()) != -1) {
+			    json.append((char) c);
+		    }
+
+		    return json.toString();
+	    }
     }
 }

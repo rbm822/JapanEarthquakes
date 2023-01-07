@@ -8,7 +8,8 @@ public class Main {
       try {
             APIConnector connector = new APIConnector("https://www.jma.go.jp/bosai/quake/data/list.json");
             QuakeLoader quakeLoader = new QuakeLoader(connector);
-//            System.out.println(EarthquakeFinder.findLocationWithMostEarthquakes(quakeLoader.getLocationsWithEarthquakes()));
+            System.out.println(EarthquakeFinder
+			    .findLocationWithMostEarthquakes(quakeLoader.getLocationsWithEarthquakes()));
 //            System.out.println(EarthquakeFinder.findMaxSeismicActivity(quakeLoader.getEarthquakeList()));
 //            for (Earthquake earthquake : quakeLoader.getEarthquakeList(0, 10)) {
 //                System.out.println(earthquake);
