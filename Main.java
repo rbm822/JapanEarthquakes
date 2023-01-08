@@ -10,20 +10,23 @@ public class Main {
       try {
             APIConnector connector = new APIConnector("https://www.jma.go.jp/bosai/quake/data/list.json");
             QuakeLoader quakeLoader = new QuakeLoader(connector);
+	    System.out.println(EarthquakeFinder
+			    .searchByLocation("Noto, Ishikawa Prefecture",
+			    quakeLoader.getLocationsWithEarthquakes()));
 //            System.out.println(EarthquakeFinder
 //			    .findLocationWithMostEarthquakes(quakeLoader.getLocationsWithEarthquakes()));
 //            System.out.println(EarthquakeFinder.findMaxSeismicActivity(quakeLoader.getEarthquakeList()));
 //            for (Earthquake earthquake : quakeLoader.getEarthquakeList(0, 10)) {
 //                System.out.println(earthquake);
 //            }
-            for (Earthquake earthquake : quakeLoader.getEarthquakeList()) {
-                System.out.println(earthquake);
+//            for (Earthquake earthquake : quakeLoader.getEarthquakeList()) {
+//                System.out.println(earthquake);
 //            }
 //            for (Location location : quakeLoader.getLocationsWithEarthquakes().values()) {
 //                System.out.println(EarthquakeFinder.findMaxSeismicActivity(location.getEarthquakes()));
 //                System.out.println("There have been " + location.getNumOfEarthquakes() +
 //                        " earthquakes at " + location + ".");
-            }
+//            }
       } catch (IOException | InterruptedException e) {
            throw new RuntimeException(e);
        }

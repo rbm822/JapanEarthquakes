@@ -56,8 +56,7 @@ public final class EarthquakeFinder {
     }
 
     // Returns earthquakes from a specified Location.
-    public static Location searchByLocation(String location, Map<String, Location> locations) {
-	    return locations.get(location);
+    public static List<Earthquake> searchByLocation(String location, Map<String, Location> locations) {
+	    return locations.get(location).getEarthquakes();
     }
-
 }
