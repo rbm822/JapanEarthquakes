@@ -57,6 +57,13 @@ public final class EarthquakeFinder {
 
     // Returns earthquakes from a specified Location.
     public static List<Earthquake> searchByLocation(String location, Map<String, Location> locations) {
-	    return locations.get(location).getEarthquakes();
+	    // Iterate through keys
+	    // If the string contains a portion of the provided location String
+	    // return the value for that key
+	    for (String loc : locations.keySet()) {
+		    System.out.println(loc);
+	    }
+
+    	    return locations.get(location).getEarthquakes();
     }
 }

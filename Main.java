@@ -11,7 +11,7 @@ public class Main {
             APIConnector connector = new APIConnector("https://www.jma.go.jp/bosai/quake/data/list.json");
             QuakeLoader quakeLoader = new QuakeLoader(connector);
 	    System.out.println(EarthquakeFinder
-			    .searchByLocation("Noto, Ishikawa Prefecture",
+			    .searchByLocation("xxx",
 			    quakeLoader.getLocationsWithEarthquakes()));
 //            System.out.println(EarthquakeFinder
 //			    .findLocationWithMostEarthquakes(quakeLoader.getLocationsWithEarthquakes()));
