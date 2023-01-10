@@ -8,8 +8,9 @@ public class Main {
             APIConnector connector = new APIConnector("https://www.jma.go.jp/bosai/quake/data/list.json");
             QuakeLoader quakeLoader = new QuakeLoader(connector);
 	    // For testing
-	    System.out.println(EarthquakeFinder.searchByLocation("Fukushima",
-				    quakeLoader.getLocationsWithEarthquakes()));
+	    QuakePrinter printer = new QuakePrinter(quakeLoader.getEarthquakeList(),
+			    quakeLoader.getLocationsWithEarthquakes());
+	    printer.printLocationWithMostEarthquakes();
 
       } catch (IOException | InterruptedException e) {
            throw new RuntimeException(e);
