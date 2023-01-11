@@ -11,8 +11,8 @@ public class Main {
 	    QuakePrinter printer = new QuakePrinter(quakeLoader.getEarthquakeList(),
 			    quakeLoader.getLocationsWithEarthquakes());
 //	    printer.printLocationWithMostEarthquakes();
-	    printer.printMaxMagnitudeEarthquake();
-
+//	    printer.printMaxMagnitudeEarthquake();
+	    printer.printMaxMagnitudeEarthquake("Aomori");
       } catch (IOException | InterruptedException e) {
            throw new RuntimeException(e);
        }

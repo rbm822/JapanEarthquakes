@@ -25,4 +25,13 @@ public class QuakePrinter {
 		System.out.println("The earthquake with the highest magnitude: ");
 		System.out.println(EarthquakeFinder.findMaxMagnitude(earthquakeList));
 	}
+
+	public void printMaxMagnitudeEarthquake(String searchFor) {
+		List<Location> locations = EarthquakeFinder.
+			searchByLocation(searchFor, earthquakeMap);
+		for (Location location : locations) {
+			System.out.println(EarthquakeFinder.
+					findMaxMagnitude(location.getEarthquakes()));
+		}
+	}
 }
