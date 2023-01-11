@@ -17,7 +17,12 @@ public class QuakePrinter {
 		Location location = null;
 	        location = EarthquakeFinder.findLocationWithMostEarthquakes(earthquakeMap);	
 		System.out.println(location + " is the location with the most earthquakes.");
-		System.out.println("There has been " +
+		System.out.println("There have been " +
 			       	location.getNumOfEarthquakes() + " earthquakes.");
+	}
+
+	public void printMaxMagnitudeEarthquake() {
+		System.out.println("The earthquake with the highest magnitude: ");
+		System.out.println(EarthquakeFinder.findMaxMagnitude(earthquakeList));
 	}
 }

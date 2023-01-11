@@ -10,7 +10,8 @@ public class Main {
 	    // For testing
 	    QuakePrinter printer = new QuakePrinter(quakeLoader.getEarthquakeList(),
 			    quakeLoader.getLocationsWithEarthquakes());
-	    printer.printLocationWithMostEarthquakes();
+//	    printer.printLocationWithMostEarthquakes();
+	    printer.printMaxMagnitudeEarthquake();
 
       } catch (IOException | InterruptedException e) {
            throw new RuntimeException(e);
